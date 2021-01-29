@@ -2,44 +2,32 @@ var models  = require('../models');
 var express = require('express');
 var router  = express.Router();
 
-/*/require controllers
-var user_controller = require('../controllers/userController');
+// var userController = require("../controllers/userController");
 
-//get user homepage
-router.get('/', user_controller.index);
-// GET request for  user created
-router.get('/create', user_controller.user_create_get);
 
-// POST request for creating user.
-router.post('/create', user_controller.user_create_post);
+// router.get('/', userController.user_get_all_details);
 
-// GET details for one user.
-router.get('/user:id', user_controller.user_detail);
+// router.get('/create', userController.user_create_get);
 
-// GET request for list of all user.
-router.get('/users', user_controller.user_list);
+// router.post('/create', userController.user_create_post);
 
-// GET request for all users details.
-router.get('/users', user_controller.user_detail_all);
+// router.get('/:user_id/delete', userController.user_delete_get);
 
-// GET request to update a record of Timesheet..
-	router.get('/user:id/update', user_controller.user_update_get);
-	
-// POST request to update a record of Timesheet..
-	router.post('/user:id/update', user_controller.user_update_post);
-	
-	// GET request to delete a record of Timesheet.
-	router.get('/user:id/delete', user_controller.user_delete_get);
-	
-	// POST request to delete a record of Timesheet..
-	router.post('/user:id/delete', user_controller.user_delete_post);
-/*my stuff ends here*/
+// router.post('/:user_id/delete', userController.user_delete_post);
+
+// router.get('/:user_id/update', userController.user_update_get);
+
+// router.post('/:user_id/update', userController.user_update_post);
+
+// router.get('/list', userController.user_list);
+
+// router.get('/:user_id', userController.user_detail);
 
 router.post('/create', function(req, res) {
   models.User.create({
     username: req.body.username
   }).then(function() {
-    res.redirect('/');
+    res.redirect('/users');
   });
 });
 

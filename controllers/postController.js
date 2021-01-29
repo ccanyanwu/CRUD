@@ -1,6 +1,7 @@
 var Post = require('../models/post');
 var models = require('../models');
 
+
 // Display post create form on GET.
 exports.post_create_get = function(req, res, next) {
         // renders a post form
@@ -118,12 +119,17 @@ exports.post_list = function(req, res, next) {
         
 };
 
+
 // This is the blog homepage.
 exports.index = function(req, res) {
 
       // find the count of posts in database
       models.Post.findAndCountAll(
       ).then(function(postCount) {
+          models.Author.findAndCountAll(
+      ).then(function(authorCount) {
+          models.User.findAndCountAll(
+      ).then(function(userCount) {
           
        
         // find the count of authors in database
@@ -132,15 +138,15 @@ exports.index = function(req, res) {
  
         // find the count of categories in database
  
-        res.render('pages/index', {title: 'Homepage', postCount: postCount, layout: 'layouts/main'});
+        res.render('pages/index', {title: 'Homepage', postCount: postCount, authorCount: authorCount, userCount:userCount, layout: 'layouts/main'});
         
         // res.render('pages/index_list_sample', { title: 'Post Details', layout: 'layouts/list'});
         // res.render('pages/index_detail_sample', { page: 'Home' , title: 'Post Details', layout: 'layouts/detail'});
-
+      })
+      })
       })
     
     
     };
-
 
  

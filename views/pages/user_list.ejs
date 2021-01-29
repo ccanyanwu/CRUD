@@ -1,4 +1,20 @@
-<%- include ('../partials/left-sidebar') %>
+<p>Users created successfully</p>
+<p>See list of users below</p>
+<div class="col-sm-8">    
+        <div class="">
+        <ol>
+        <% users.forEach(function(user) { %>
+                <li>
+                    <h4><a href="/blog/users/<%= user.id %>"><%= user.full_name %></a></h4>
+                    <p>The main body of the user <%= user.email %></p>
+                     <a href="/blog/users/<%= user.id %>/update">Edit user</a> | <a href="/blog/users/<%= user.id %>/delete">Delete user</a>
+                </li>
+            <br/>
+        <% }); %>
+        </ol>
+    </div>
+    </div>
+
 <%- include ('../partials/content') %>
-<%- include ('../partials/right-sidebar') %>
+<%- include ('../partials/right-sidebar-list') %>
  

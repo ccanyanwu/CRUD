@@ -1,7 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Category = sequelize.define('Category', {
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    brand: DataTypes.STRING
   });
 
   return Category;

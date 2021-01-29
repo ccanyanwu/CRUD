@@ -10,14 +10,14 @@ module.exports = {
   dev: {
     username: "traineeUser",
     password: "traineePassword",
-    database:"chukwuemekadatabase", //"grader",
+    database:"crudemmy", //"grader",
     host: "traineedb.cgq0reqixqsd.us-east-1.rds.amazonaws.com", //"manifestdbinstance.cgq0reqixqsd.us-east-1.rds.amazonaws.com",
     dialect: 'postgres' 
   },
   production: {
     username: "traineeUser",
     password: "traineePassword",
-    database: "chukwuemekadatabase", //"grader",
+    database: "crudemmy", //"grader",
     host: "traineedb.cgq0reqixqsd.us-east-1.rds.amazonaws.com", //"manifestdbinstance.cgq0reqixqsd.us-east-1.rds.amazonaws.com",
     dialect: 'postgres' 
   }

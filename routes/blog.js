@@ -7,8 +7,7 @@ var author_controller = require('../controllers/authorController');
 var post_controller = require('../controllers/postController'); 
 var category_controller = require('../controllers/categoryController');
 var comment_controller = require('../controllers/commentController');
-var user_controller = require('../controllers/userController');
-
+var user_controller = require('../controllers/userController'); 
 
 /// POST ROUTES ///
 
@@ -62,32 +61,34 @@ router.get('/author/:author_id', author_controller.author_detail);
 // GET request for list of all Authors.
 router.get('/authors', author_controller.author_list);
 
+///USER ROUTES ///
 
-/// USER ROUTES ///
 
-// GET request for creating User. NOTE This must come before route for id (i.e. display user).
+
+// GET request for creating Author. NOTE This must come before route for id (i.e. display author).
 router.get('/user/create', user_controller.user_create_get);
 
-// POST request for creating User.
+// POST request for creating Author.
 router.post('/user/create', user_controller.user_create_post);
 
-// GET request to delete User.
+// GET request to delete Author.
 router.get('/user/:user_id/delete', user_controller.user_delete_get);
 
-// POST request to delete User
+// POST request to delete Author
 router.post('/user/:user_id/delete', user_controller.user_delete_post);
 
-// GET request to update User.
+// GET request to update Author.
 router.get('/user/:user_id/update', user_controller.user_update_get);
 
-// POST request to update User.
+// POST request to update Author.
 router.post('/user/:user_id/update', user_controller.user_update_post);
 
-// GET request for one User.
+// GET request for one Author.
 router.get('/user/:user_id', user_controller.user_detail);
 
-// GET request for list of all Users.
+// GET request for list of all userss.
 router.get('/users', user_controller.user_list);
+
 
 /// Category ROUTES ///
 

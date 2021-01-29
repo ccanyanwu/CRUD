@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 
 var routes = require('./routes/index');
-var userRouter  = require('./routes/users');
+var users  = require('./routes/users');
 var blog  = require('./routes/blog');
 var timesheetRouter  = require('./routes/timesheet');
 
@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', userRouter);
+app.use('/users', users);
 app.use('/blog', blog);
 app.use('/timesheet', timesheetRouter);
 

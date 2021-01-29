@@ -64,7 +64,59 @@
         </ol>
     </div>
     </div>
-<% } else { %>
+<% } else if(title == 'Create User') { %>
+    <div class="col-sm-8">    
+        <div class="jumbotron">
+            <form action="" method="post">
+              Full Name:<br>
+              <input type="text" name="full_name" value="">
+              <br><br>
+              <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+<% }else if (title == 'Delete User') { %>
+  <div class="col-sm-8">    
+        <div class="jumbotron">
+     <p>Click the button to delete <%= user.full_name%></p>
+     <form action="<%=`/users/${user.id}/delete`%>" method="post">
+        <input class='btn btn-danger' type="submit" value="Delete">
+     </form>
+    </div>
+ </div> 
+<% }else if (title == 'Update User') { %>
+    <div class="col-sm-8">    
+        <div class="jumbotron">
+            <form action="/blog/post/<%= user.id %>/update" method="post">
+              Fullname:<br>
+              <input type="text" name="post_title" value="<%= user.full_name %>">
+              <br><br>
+              <input type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+<% }else if (title == 'User List') { %>
+    <div class="col-sm-8">    
+        <div class="">
+        <ol>
+        <% users.forEach(function(user) { %>
+                <li>
+                    <h4><a href="/blog/users/<%= user.id %>"><%= user.full_name %></a></h4>
+                     <a href="/blog/users/<%= user.id %>/update">Edit  User</a> | <a href="/blog/users/<%= user.id %>/delete">Delete Post</a>
+                </li>
+            <br/>
+        <% }); %>
+        </ol>
+    </div>
+    </div>
+<% }else if (title == 'Delete Post') { %>
+     <div class="col-sm-8">    
+        <div class="jumbotron">
+     <p>Click the button to delete <%= user.fullname%></p>
+     <a class='btn btn-primary' href="/users/justArandom/delete">delete</a>
+    </div>
+ </div>
+<% }else { %>
     <div class="col-sm-8">    
         <div class="jumbotron">
             <h1><%= title %></h1>

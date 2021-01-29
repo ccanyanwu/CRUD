@@ -1,5 +1,5 @@
 var Category = require('../models/category');
-
+var models = require('../models');
 // Display category create form on GET.
 exports.category_create_get = function(req, res, next) {
         // create category GET controller logic here 
